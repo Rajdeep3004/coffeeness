@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-yellow-700 font-Poppins;
+}
+
+.nav {
+  @apply font-Pacifico  text-yellow-500 text-4xl md:text-6xl lg:text-7xl mx-4 my-4;
+}
+
+.nav-ul {
+  @apply text-xl md:text-2xl lg:mx-6 lg:inline-block lg:static lg:w-auto lg:mt-11
+  absolute top-20 grid w-[80%]  bg-yellow-700  mt-0 md:mt-3 duration-300 pb-[75%] md:pb-[79.5%] lg:pb-0;
+}
+
+.nav-li-active {
+  @apply text-white  px-6 py-6 lg:py-0;
+}
+
+.nav-li-inactive {
+  @apply text-yellow-500 px-6 py-6 lg:py-0;
+}
+
+.nav-li-extra {
+  @apply text-xl md:text-2xl text-black lg:h-0 pl-6 lg:pl-4 py-6 lg:py-6 duration-300;
+}
+
+.login-div {
+  @apply bg-white text-black rounded-[34px] text-center px-6 py-6 md:py-8 lg:py-10
+           mx-8 md:mx-28 lg:mx-[30rem] my-[30%] lg:my-[7.5%];
+}
+
+.login-label {
+  @apply text-sm md:text-2xl;
+}
+
+.login-input {
+  @apply border-2 border-yellow-500 rounded-lg w-[15rem] md:w-[20rem] md:h-10 mt-4 mb-6 md:mb-10;
+}
+
+.login-btn {
+  @apply text-sm md:text-2xl bg-yellow-700 hover:bg-yellow-600 text-white rounded-3xl px-10 py-3 mb-2 md:mb-4 hover:scale-110 duration-500;
+}
+
+.home-outerDiv {
+  @apply lg:grid lg:grid-cols-2;
+}
+
+.home-outerDivtwo {
+  @apply home-outerDiv mt-10 lg:mt-14;
+}
+
+.home-innerDiv {
+  @apply bg-white text-black pt-3 md:pt-8 lg:pt-20 text-center login-label;
+}
+
+.home-btn {
+  @apply bg-yellow-700 hover:bg-yellow-600 text-white rounded-[34px] px-6 py-4 hover:scale-110 duration-500;
+}
+
+.home-btn-btn {
+  @apply home-btn mt-3 md:mt-10 lg:mt-48 mb-3 md:mb-6 login-label;
+}
+
+.home-icons {
+  @apply w-8 h-8 lg:w-14 lg:h-14 inline-block mx-4 hover:cursor-pointer hover:scale-110 duration-500;
+}
+
+.menu-nav-div {
+  @apply grid grid-cols-3 lg:grid-cols-5 text-center gap-x-4 lg:gap-x-14 mx-6 lg:mx-28;
+}
+
+.menu-form-div {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 md:mx-4 lg:mx-16 lg:my-8 gap-y-12 md:gap-10 lg:gap-20;
+}
+
+.card-div {
+  @apply max-w-lg overflow-hidden shadow-2xl bg-white text-black rounded-[34px] hover:scale-105 duration-500;
+}
+
+.card-btn {
+  @apply bg-yellow-700 hover:bg-yellow-600 text-white rounded-[34px] px-6 py-3 hover:scale-110 duration-500;
+}
+
+.order-div {
+  @apply bg-white text-black text-xs md:text-base mx-6 md:mx-20 lg:mx-28 rounded-[34px];
+}
+
+.order-img {
+  @apply w-8 h-8 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-[34px] inline-block;
+}
+
+.order-btn {
+  @apply hover:bg-yellow-500 hover:text-white hover:rounded-lg;
+}
+
+.checkoutForm-input {
+  @apply border-2 rounded-lg ml-4 w-[8rem] md:w-[12rem] md:h-7 mt-2 mb-2 mx-4;
+}
