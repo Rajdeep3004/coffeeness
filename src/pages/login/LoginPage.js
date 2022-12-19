@@ -33,8 +33,9 @@ const LoginPage = (props) => {
 
         <div className="text-center">
           <button
+            disabled={props.blur}
             onClick={props.change ? props.signupHandler : props.loginHandler}
-            className="login-btn"
+            className={`login-btn ${props.blur ? "opacity-25" : null}`}
           >
             {props.change ? "Sign Up" : "Login"}
           </button>

@@ -17,6 +17,7 @@ const Login = () => {
   const [msg, setMsg] = useState({ msg: "", show: false });
 
   const navigate = useNavigate();
+  const [blur, setBlur] = useState(false);
   const [change, setChange] = useState(false);
 
   const changeHandler = (event) => {
@@ -25,6 +26,7 @@ const Login = () => {
 
   const loginHandler = (event) => {
     event.preventDefault();
+    setBlur(true);
     signInWithEmailAndPassword(auth, inputData.email, inputData.pass)
       .then((res) => {
         if (res.user) {
@@ -39,11 +41,15 @@ const Login = () => {
           });
         }
       })
-      .catch((err) => setMsg({ ...msg, msg: err.message, show: true }));
+      .catch((err) => {
+        setMsg({ ...msg, msg: err.message, show: true });
+        setBlur(false);
+      });
   };
 
   const signupHandler = (event) => {
     event.preventDefault();
+    setBlur(true);
     createUserWithEmailAndPassword(auth, inputData.email, inputData.pass)
       .then((res) => {
         if (res.user) {
@@ -58,12 +64,16 @@ const Login = () => {
           });
         }
       })
-      .catch((err) => setMsg({ ...msg, msg: err.message, show: true }));
+      .catch((err) => {
+        setMsg({ ...msg, msg: err.message, show: true });
+        setBlur(false);
+      });
   };
 
   return (
     <LoginPage
       inputData={inputData}
+      blur={blur}
       change={change}
       setChange={setChange}
       changeHandler={changeHandler}
