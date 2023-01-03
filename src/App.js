@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./index.css";
@@ -12,8 +12,10 @@ import Food from "./pages/menu/Food";
 import Bakery from "./pages/menu/Bakery";
 import Order from "./pages/Order";
 import Login from "./pages/Login";
+import CartContext from "./store/CartContext";
 
 function App() {
+  const ctx = useContext(CartContext);
   return (
     <Fragment>
       <Navbar />
@@ -36,7 +38,7 @@ function App() {
         </Route>
 
         <Route path="order" element={<Order />} />
-        <Route path="login" element={<Login />} />
+        {ctx.isLoggedin === false && <Route path="login" element={<Login />} />}
       </Routes>
     </Fragment>
   );
