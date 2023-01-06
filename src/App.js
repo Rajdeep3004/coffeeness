@@ -37,7 +37,7 @@ function App() {
           <Route path="bakery" element={<Bakery />} />
         </Route>
 
-        <Route path="order" element={<Order />} />
+        {ctx.isLoggedin&& <Route path="order" element={<Order />} />}
         {ctx.isLoggedin === false && <Route path="login" element={<Login />} />}
       </Routes>
     </Fragment>
